@@ -21,6 +21,12 @@
     <%} else { %>
     <h3>Isso é uma mensagem de erro</h3>
 
-    <%}%>
+    <%}%> <% produtos.forEach((produto) => { %>
+    <hr />
+    <h4>Nome do Produto: <%= produto.nome %></h4>
+    <h5>Preco: <%= produto.preco %></h5>
+    <hr />
+    <% }) %>
+    <!-- FIM -->
   </body>
 </html>
