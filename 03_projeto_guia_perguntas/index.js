@@ -10,12 +10,14 @@ const port = 8050;
 app.get("/:nome/:lang", (req, res) => {
   var nome = req.params.nome;
   var lang = req.params.lang;
+  var exibirMsg = true;
 
   res.render("index", {
     nome: nome,
     lang: lang,
     empresa: "Caique's Company",
     inscritos: 8000,
+    msg: exibirMsg,
   });
 });
 
