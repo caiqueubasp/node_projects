@@ -2,12 +2,21 @@ const express = require("express");
 const app = express();
 // const home = require("./views/index.ejs");
 
+// Estou dizendo para o Express usar o EJS como View engine
 app.set("view engine", "ejs");
 
 const port = 8050;
 
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/:nome/:lang", (req, res) => {
+  var nome = req.params.nome;
+  var lang = req.params.lang;
+
+  res.render("index", {
+    nome: nome,
+    lang: lang,
+    empresa: "Caique's Company",
+    inscritos: 8000,
+  });
 });
 
 app.listen(port, () => {
