@@ -8,25 +8,12 @@ app.use(express.static("public"));
 
 const port = 8050;
 
-app.get("/:nome/:lang", (req, res) => {
-  var nome = req.params.nome;
-  var lang = req.params.lang;
-  var exibirMsg = true;
+app.get("/", (req, res) => {
+  res.render("index");
+});
 
-  var produtos = [
-    { nome: "Doritos", preco: 3.14 },
-    { nome: "Coca-Cola", preco: 5 },
-    { nome: "Leite", preco: 1.45 },
-  ];
-
-  res.render("index", {
-    nome: nome,
-    lang: lang,
-    empresa: "Caique's Company",
-    inscritos: 8000,
-    msg: exibirMsg,
-    produtos: produtos,
-  });
+app.get("/perguntar", (req, res) => {
+  res.render("perguntar");
 });
 
 app.listen(port, () => {
