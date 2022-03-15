@@ -15,18 +15,19 @@
         </div>
 
         <div class="card-body">
-          <form class="mt-2">
+          <form method="POST" action="/salvarpergunta" class="mt-2">
             <label for="inpt">Título</label>
             <input
               id="inpt"
               class="form-control"
               type="text"
               placeholder="Titulo"
+              name="titulo"
             />
             <label class="mt-4" for="text-area">Descricao</label>
             <textarea
               class="form-control"
-              name=""
+              name="descricao"
               id="text-area"
               cols="30"
               rows="10"
